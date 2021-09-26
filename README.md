@@ -7,7 +7,7 @@ To tackle the problem at hand, *'full text search over all the attributes in a g
 **Spring boot Microservice**
 
 Spring Boot provides an easy way to interact with Elasticsearch through Spring Data repositories.
-This microservcie includes unit test and integration testing. 
+This microservice includes unit test and integration testing. 
 Please refer following for the test coverage report.
  ![image info](images/test-coverage.jpg)
  
@@ -126,11 +126,14 @@ Using springdoc-openapi java library, reverse engineer and generated the OpenAPI
    }
 }
 ```
-Swagger API definition
 
- ![image info](images/api-def.jpg)
+Swagger url http://localhost:8080/swagger-ui.html
+
+![image info](images/api-def.jpg)
  
 To monitor the operational status of the microservice health check endpoint exposed.
+
+health check url http://localhost:8080/actuator/health
 
 ![image info](images/helth-check.jpg)
 
@@ -140,7 +143,40 @@ To monitor the operational status of the microservice health check endpoint expo
 
 For the demonstration purpose, the microservice ingests a sample dataset to Elasticsearch when the server starts. Also, the integration test suite needs to load a test dataset to Elasticsearch. Therefore, the Elasticsearch cluster needs to be ready for the microservice.
 
-A simple Docker compose file ([docker-compose.yaml](docker-compose.yaml)) is provided to start Elasticsearch cluster. In the future, scalability can be achieved by adding new nodes.
+Test Dataset
+
+```
+[
+  {
+    "id": 1,
+    "type": "incident",
+    "subject": "Cargo Missing",
+    "description": "Nostrud ad sit velit cupidatat laboris ipsum nisi amet laboris ex exercitation amet et proident. Ipsum fugiat aute dolore tempor nostrud velit ipsum.",
+    "priority": "high",
+    "status": "pending"
+  },
+  {
+    "id": 2,
+    "type": "incident",
+    "subject": "Booking Error",
+    "description": "Aliquip excepteur fugiat ex minim ea aute eu labore. Sunt eiusmod esse eu non commodo est veniam consequat.",
+    "priority": "low",
+    "status": "hold"
+  },
+  {
+    "id": 3,
+    "type": "incident",
+    "subject": "Payment Sent Error",
+    "description": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit",
+    "priority": "high",
+    "status": "pending"
+  }
+]
+```
+
+
+A simple Docker compose file ([docker-compose.yaml](docker-compose.yaml)) is provided to start Elasticsearch cluster.
+In the future, scalability can be achieved by adding new nodes to the cluster.
 
 ```
 version: "3.7"
@@ -202,6 +238,6 @@ Postman collection  ([search-api-postman_collection.json](search-api-postman_col
 
 ## Further improvements
 - Packing microservice in a Docker container and deploying to Kubernetes cluster.
-- Add Jenkinsfile for jenkin based ci/cd pipeline
-- API authantication and Elasticsearch index (dataset) based autharization.
+- Add Jenkinsfile for Jenkin based ci/cd pipelines
+- API authentication and Elasticsearch index (dataset) based authorization.
 - Add Kibana for data visualization
