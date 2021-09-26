@@ -138,7 +138,7 @@ To monitor the operational status of the microservice health check endpoint expo
 
 **Prerequisites**
 
-For the demonstration purpose, the microservice ingests a sample dataset to Elasticsearch when the server is started. Also, the integration test suite needs to load a tesdt dataset to Elasticsearch. Therefore, the Elasticsearch cluster needs to be ready for the microservice.
+For the demonstration purpose, the microservice ingests a sample dataset to Elasticsearch when the server starts. Also, the integration test suite needs to load a test dataset to Elasticsearch. Therefore, the Elasticsearch cluster needs to be ready for the microservice.
 
 Strat Elasticsearch Cluster
 
