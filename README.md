@@ -143,7 +143,7 @@ health check url http://localhost:8080/actuator/health
 
 For the demonstration purpose, the microservice ingests a sample dataset to Elasticsearch when the server starts. Also, the integration test suite needs to load a test dataset to Elasticsearch. Therefore, the Elasticsearch cluster needs to be ready for the microservice.
 
-Test Dataset
+Test dataset
 
 ```
 [
@@ -199,6 +199,8 @@ services:
     environment:
       discovery.type: single-node  
 ```
+
+Start Elasticsearch cluster
 
 `> docker compose up -d`
 
