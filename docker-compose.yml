@@ -1,0 +1,19 @@
+version: "3.7"
+
+networks:
+ dev-net:
+  name: dev-net
+  driver: bridge
+
+services:
+  elasticsearch:
+    image: elasticsearch:7.8.0
+    container_name: elasticsearch
+    restart: unless-stopped
+    networks:
+      - dev-net
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    environment:
+      discovery.type: single-node  

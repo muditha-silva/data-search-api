@@ -1,0 +1,198 @@
+{
+	"info": {
+		"_postman_id": "90d3254c-bb5f-47f4-9baf-6ce292139175",
+		"name": "Maersk dataset search API ",
+		"description": "OpenApi (Swagger) documentation auto generated from code",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Search by attribute value",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/v1/search?attribute=attributeName&value=attributeValue&page=0&size=10",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"search"
+					],
+					"query": [
+						{
+							"key": "attribute",
+							"value": "attributeName",
+							"description": "(Required) Attribute to be find"
+						},
+						{
+							"key": "value",
+							"value": "attributeValue",
+							"description": "(Required) Value to be find"
+						},
+						{
+							"key": "page",
+							"value": "0",
+							"description": "Page number (for pagination)"
+						},
+						{
+							"key": "size",
+							"value": "10",
+							"description": "Number of items per page (for pagination)"
+						}
+					]
+				},
+				"description": "Search by attribute value"
+			},
+			"response": [
+				{
+					"name": "Successful operation",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/v1/search?attribute=fugiat&value=fugiat&page=0&size=10",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"v1",
+								"search"
+							],
+							"query": [
+								{
+									"key": "attribute",
+									"value": "fugiat"
+								},
+								{
+									"key": "value",
+									"value": "fugiat"
+								},
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "*/*"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "Bad Request ",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/v1/search?attribute=fugiat&value=fugiat&page=0&size=10",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"v1",
+								"search"
+							],
+							"query": [
+								{
+									"key": "attribute",
+									"value": "fugiat"
+								},
+								{
+									"key": "value",
+									"value": "fugiat"
+								},
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "*/*"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				},
+				{
+					"name": "No data found",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/v1/search?attribute=fugiat&value=fugiat&page=0&size=10",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"v1",
+								"search"
+							],
+							"query": [
+								{
+									"key": "attribute",
+									"value": "fugiat"
+								},
+								{
+									"key": "value",
+									"value": "fugiat"
+								},
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "*/*"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}

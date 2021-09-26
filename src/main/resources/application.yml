@@ -1,0 +1,24 @@
+logging:
+  pattern:
+    console: "[Data Search Api] %clr(%d{HH:mm:ss.SSS}){faint} %clr(${LOG_LEVEL_PATTERN:%5p}) %clr(---){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:%wEx}"
+    file: "[Data Search Api] %clr(%d{HH:mm:ss.SSS}){faint} %clr(${LOG_LEVEL_PATTERN:%5p}) %clr(---){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:%wEx}"
+  file:    name: log/data-search-api.log
+  
+spring:
+  main:
+    banner-mode: OFF
+  jackson:    property-naming-strategy: SNAKE_CASE    
+
+springdoc:  swagger-ui:    supported-submit-methods:    - get
+
+elasticsearch:
+  host: http://localhost:9200
+  connect: localhost:9200
+
+management:
+  endpoint:
+    health:
+      enabled: 'true'
+  endpoints:
+    enabled-by-default: 'false'  metrics:    export:      elastic:        step: 30s
+        host: http://localhost:9200
