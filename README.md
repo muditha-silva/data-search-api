@@ -126,11 +126,12 @@ Using springdoc-openapi java library, reverse engineer and generated the OpenAPI
    }
 }
 ```
-([Swagger API definition](openapi.json))
+Swagger API definition
 
  ![image info](images/api-def.jpg)
  
 To monitor the operational status of the microservice health check endpoint exposed.
+
 ![image info](images/helth-check.jpg)
 
 ## Build and Deploy process
@@ -165,7 +166,7 @@ services:
       discovery.type: single-node  
 ```
 
-> docker compose up
+`> docker compose up -d`
 
 Make sure Elasticsearch cluster is up and running
 
