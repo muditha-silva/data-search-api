@@ -174,7 +174,7 @@ Make sure Elasticsearch cluster is up and running
 
 Gradle is used as the build tool.
 
-Make sure you the commands from project root directory
+Run the commands from project root directory
 
 To run tests
 
@@ -189,7 +189,7 @@ To build
 `>java -jar build/libs/data-search-api-1.0.0.jar`
 
 
-To Dockerize the microservice simple ([Dockerfile](Dockerfile)) included.
+To dockerize the microservice simple ([Dockerfile](Dockerfile)) included.
 
 ```
 FROM openjdk:14
@@ -201,7 +201,7 @@ ENTRYPOINT ["java","-jar","/data-search-api-1.0.0.jar"]
 Postman collection  ([search-api-postman_collection.json](search-api-postman_collection.json))  for teting the API.
 
 ## Further improvements
-- Packing Microservice in a Docker container and deploying to Kubernetes cluster.
+- Packing microservice in a Docker container and deploying to Kubernetes cluster.
 - Add Jenkinsfile for jenkin based ci/cd pipeline
 - API authantication and Elasticsearch index (dataset) based autharization.
 - Add Kibana for data visualization
