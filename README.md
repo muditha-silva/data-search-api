@@ -1,15 +1,18 @@
 # Solution Overview
 
 **Backend**
+
 To tackle the problem at hand, *'full text search over all the attributes in a given dataset'*, the possibility is to use NoSQL document stores like Elasticsearch or MongoDB. Choose Elasticsearch over MongoDB as Elasticsearch is a specially designed full-text search engine, and it caters to large data sets. Whereas MongoDB is excellent at performing complex calculations and MapReduce jobs.
 
 **Spring boot Microservice**
+
 Spring Boot provides an easy way to interact with Elasticsearch through Spring Data repositories.
 This microservcie includes unit test and integration testing. 
 Please refer following for the test coverage report.
  ![image info](images/test-coverage.jpg)
  
 **API**
+
 Using springdoc-openapi java library, reverse engineer and generated the OpenAPI specification.
 
 ```
@@ -133,6 +136,7 @@ To monitor the operational status of the microservice health check endpoint expo
 ## Build and Deploy process
 
 **Prerequisites**
+
 For the demonstration purpose, the microservice ingests a sample dataset to Elasticsearch when the server is started. Also, the integration test suite needs to load a tesdt dataset to Elasticsearch. Therefore, the Elasticsearch cluster needs to be ready for the microservice.
 
 Strat Elasticsearch Cluster
@@ -161,24 +165,33 @@ services:
       discovery.type: single-node  
 ```
 
-```> docker compose up```
+> docker compose up
 
 Make sure Elasticsearch cluster is up and running
+
 ![image info](images/es-cluster-status.jpg) 
 
 **Build procees**
-Gradle is used as the build tool. 
-Build command 
-From the project root run the following commands 
+
+Gradle is used as the build tool.
+
+Make sure you the commands from project root directory
+
 To run tests
-```./gradlew clean test```
+
+`>./gradlew clean test`
+
 To build 
-```./gradlew clean build```
+
+`>./gradlew clean build`
 
 **Run the server**
-```java -jar build/libs/data-search-api-1.0.0.jar```
+
+`java -jar build/libs/data-search-api-1.0.0.jar`
+
 
 To Dockerize the microservice simple ([Dockerfile](Dockerfile)) included.
+
 ```
 FROM openjdk:14
 MAINTAINER Muditha Silva
