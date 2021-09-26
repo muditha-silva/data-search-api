@@ -188,7 +188,7 @@ To build
 
 **Run the server**
 
-`java -jar build/libs/data-search-api-1.0.0.jar`
+`>java -jar build/libs/data-search-api-1.0.0.jar`
 
 
 To Dockerize the microservice simple ([Dockerfile](Dockerfile)) included.
