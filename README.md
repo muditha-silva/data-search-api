@@ -1,6 +1,6 @@
 # Solution Overview
 
-**Backend**
+**Backen**
 
 To tackle the problem at hand, *'full text search over all the attributes in a given dataset'*, the possibility is to use NoSQL document stores like Elasticsearch or MongoDB. Choose Elasticsearch over MongoDB as Elasticsearch is a specially designed full-text search engine, and it caters to large data sets. Whereas MongoDB is excellent at performing complex calculations and MapReduce jobs.
 
